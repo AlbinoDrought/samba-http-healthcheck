@@ -86,6 +86,7 @@ ENVIRONMENT VARIABLES
  * `USERID` - Set the UID for the samba server
  * `GROUPID` - Set the GID for the samba server
  * `INCLUDE` - As above, add a smb.conf include
+ * `HEALTHCHECK_SHARE` - Name of the share to perform IO checks on. Healthcheck results will be available on port 8080, returning 200 if OK and 500 if not ok.
 
 **NOTE**: if you enable nmbd (via `-n` or the `NMBD` environment variable), you
 will also want to expose port 137 and 138 with `-p 137:137/udp -p 138:138/udp`.
