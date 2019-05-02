@@ -234,6 +234,7 @@ while getopts ":hc:g:i:nprs:Su:Ww:I:" opt; do
 done
 shift $(( OPTIND - 1 ))
 
+[[ "${HEALTHCHECK_SHARE:-""}" ]] && sh /usr/bin/check-smb-http.sh "localhost" "$HEALTHCHECK_SHARE" &
 [[ "${CHARMAP:-""}" ]] && charmap "$CHARMAP"
 [[ "${GLOBAL:-""}" ]] && global "$GLOBAL"
 [[ "${IMPORT:-""}" ]] && import "$IMPORT"
